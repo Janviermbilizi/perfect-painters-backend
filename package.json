@@ -1,0 +1,26 @@
+{
+  "name": "perfect-painters-backend",
+  "version": "1.0.0",
+  "description": "The backend for the perfect painters site",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Janviermbilizi/perfect-painters-backend.git"
+  },
+  "author": "Janvier Mbilizi & John Formeller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Janviermbilizi/perfect-painters-backend/issues"
+  },
+  "homepage": "https://github.com/Janviermbilizi/perfect-painters-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
