@@ -7,14 +7,14 @@ require("dotenv").config();
 const Routes = require("./routes");
 
 // Port that the webserver listens to
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // app middleware -
 app.use(bodyParser.json());
 app.use(expressValidator());
 
 // app.use(cors()); // allows all origins
-app.use(cors({ origin: process.env.CLIENT_URL }));
+app.use(cors({ origin: process.env.THE_PERFECT_PAINTERS_CLIENT_URL }));
 
 app.use("/api", Routes);
 
