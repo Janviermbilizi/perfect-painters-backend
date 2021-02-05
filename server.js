@@ -14,7 +14,9 @@ app.use(bodyParser.json());
 app.use(expressValidator());
 
 //app.use(cors()); // allows all origins
-app.use(cors({ origin: process.env.REACT_APP_CLIENT_URL }));
+app.use(
+  cors({ origin: process.env.REACT_APP_THE_PERFECT_PAINTERS_CLIENT_URL })
+);
 
 app.use("/api", Routes);
 
