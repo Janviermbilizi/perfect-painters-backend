@@ -1,13 +1,20 @@
 exports.addCustomerValidator = (req, res, next) => {
-  // name
-  req.check("username", "Please provide your name!").notEmpty();
+  // first name
+  req.check("firstname", "Please provide your first name!").notEmpty();
   req
-    .check("username", "The name must be between 3 to 40 characters")
+    .check("firstname", "The first name must be between 3 to 25 characters")
     .isLength({
       min: 3,
-      max: 40,
+      max: 25,
     });
-
+  // last name
+  req.check("lastname", "Please provide your first name!").notEmpty();
+  req
+    .check("lastname", "The last name must be between 3 to 25 characters")
+    .isLength({
+      min: 3,
+      max: 25,
+    });
   // phone
   req.check("phone", "Please provide your phone!").notEmpty();
   req.check("phone", "Please provide a correct phone number!").isLength({
@@ -15,7 +22,7 @@ exports.addCustomerValidator = (req, res, next) => {
     max: 15,
   });
   //email
-  req.check("email", "Please provide a correct email!").isEmail();
+  //req.check("email", "Please provide a correct email!").isEmail();
 
   //address
   req.check("address", "Please provide your address!").notEmpty();
