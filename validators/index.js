@@ -24,6 +24,13 @@ exports.addCustomerValidator = (req, res, next) => {
   //email
   //req.check("email", "Please provide a correct email!").isEmail();
 
+  // service category
+  req
+    .check("servicecategory", "Please provide the Service category!")
+    .notEmpty();
+  // service area
+  req.check("servicearea", "Please provide the Service Area!").notEmpty();
+
   //address
   req.check("address", "Please provide your address!").notEmpty();
   req

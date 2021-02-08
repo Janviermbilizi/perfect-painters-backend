@@ -12,6 +12,8 @@ exports.addCustomerToGoogleSpreadsheet = (req, res) => {
   const {
     firstname,
     lastname,
+    servicecategory,
+    servicearea,
     phone,
     email,
     address,
@@ -29,15 +31,17 @@ exports.addCustomerToGoogleSpreadsheet = (req, res) => {
     firstname
   )}&Last Name=${encodeURIComponent(lastname)}&Phone=${encodeURIComponent(
     phone
-  )}&Email=${encodeURIComponent(email)}&Address=${encodeURIComponent(
-    address
-  )}&Address 2=${encodeURIComponent(address2)}&City=${encodeURIComponent(
-    city
-  )}&State=${encodeURIComponent(state)}&Zip=${encodeURIComponent(
-    zip
-  )}&Message=${encodeURIComponent(message)}&Date=${encodeURIComponent(
-    date
-  )}&Status=${encodeURIComponent(status)}`;
+  )}&Email=${encodeURIComponent(email)}&Service Category=${encodeURIComponent(
+    servicecategory
+  )}&Service Area=${encodeURIComponent(
+    servicearea
+  )}&Address=${encodeURIComponent(address)}&Address 2=${encodeURIComponent(
+    address2
+  )}&City=${encodeURIComponent(city)}&State=${encodeURIComponent(
+    state
+  )}&Zip=${encodeURIComponent(zip)}&Message=${encodeURIComponent(
+    message
+  )}&Date=${encodeURIComponent(date)}&Status=${encodeURIComponent(status)}`;
 
   fetch(url)
     .then((sent) => {
@@ -45,7 +49,7 @@ exports.addCustomerToGoogleSpreadsheet = (req, res) => {
 
       TWILIO_CLIENT.messages
         .create({
-          body: `Hey Perfect Painters, A NEW PAINTING REQUEST JUST GOT ADDED. Name: ${firstname} ${lastname}. Phone: ${phone}. City: ${city}. Message: ${message}. For more details, please see your google spreadsheet.`,
+          body: `Hey Perfect Painters, A NEW PAINTING REQUEST JUST GOT ADDED. Name: ${firstname} ${lastname}. Phone: ${phone}. Service Category: ${servicecategory}. Service Area: ${servicearea}. City: ${city}. Message: ${message}. For more details, please see your google spreadsheet.`,
           to: `${THE_PERFECT_PAINTERS_PHONE_NUMBER}`, // Text this number
           from: `${TWILIO_PHONE_NUMBER}`, // From a valid Twilio number
         })
